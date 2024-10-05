@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <link rel="stylesheet" href="styles.css">
+    <title>Detail Pendaftar</title>
+</head>
+<body>
+    <h1>Detail Informasi Pendaftar</h1>
+    <table>
+        <tr>
+            <td>Nama:</td>
+            <td><span id="nama"></span></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><span id="email"></span></td>
+        </tr>
+        <tr>
+            <td>Alamat:</td>
+            <td><span id="alamat"></span></td>
+        </tr>
+    </table>
+
+    <button onclick="goBack()">Kembali ke Halaman Pendaftaran</button>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById('nama').textContent = urlParams.get('nama');
+        document.getElementById('email').textContent = urlParams.get('email');
+        document.getElementById('alamat').textContent = urlParams.get('alamat');
+
+        function goBack() {
+            window.location.href = 'pendaftaran.html';
+        }
+    </script>
+
+</body>
+</html>
